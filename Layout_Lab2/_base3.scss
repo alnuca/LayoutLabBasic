@@ -1,0 +1,10 @@
+$base-color: gold;
+$important-color:darkgoldenrod;
+$warning-color:lemonchiffon;
+$principal-font:'georgia';
+$secondary-font:'cambria';
+$border-radius:15px;
+
+@mixin shadow-effect(){
+    box-shadow: -5px 4px 30px rgba(148, 148, 10, 0.8);
+}

@@ -1,0 +1,42 @@
+@use "base1" as *;
+
+body {
+  background-color: mintcream;
+}
+
+.box{
+  width: 100px;
+  height: 75px;
+  padding-left: 15px;
+  padding-top: 15px;
+  border-radius:$border-radius;
+  font-family: $secondary-font;
+}
+
+.container{
+  display: grid;
+  gap: 20px;
+}
+
+.base-color{
+  background-color: $base-color;
+}
+.important-color{
+  background-color: $important-color;
+}
+.warning-color{
+  background-color: $warning-color;
+}
+
+.principal{
+  font-family: $principal-font;
+}
+
+.secondary{
+  font-family: $secondary-font;
+}
+
+.shadow{
+  border: 1px solid black;;
+  @include shadow-effect;
+}

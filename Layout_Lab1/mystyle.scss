@@ -1,0 +1,45 @@
+@use "base" as *;
+@use "sass:color";
+
+body {
+  background-color: mintcream;
+}
+
+.container-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: $grid-gap;
+
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $items-size;
+    border-radius: 15px;
+  }
+}
+
+.base-color{
+  background-color: $base-color;
+  width: $items-size * 1.2;
+}
+
+$i: 1;
+@while $i <= 4 {
+  .darken-#{$i} {
+    background-color: color.scale($base-color, $lightness: -$i * 2 * 10%);
+    color: white;
+    width: $items-size;
+  }
+  $i: $i + 1;
+}
+
+$i: 1;
+@while $i <= 4 {
+  .lighten-#{$i} {
+    background-color: color.scale($base-color, $lightness: $i * 2 * 10%);
+    width: $items-size;
+  }
+  $i: $i + 1;
+}

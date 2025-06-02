@@ -1,0 +1,10 @@
+$base-color: blue;
+$important-color:darkblue;
+$warning-color:lightblue;
+$principal-font:'Impact';
+$secondary-font:'arial';
+$border-radius:15px;
+
+@mixin shadow-effect(){
+    box-shadow: -5px 4px 10px rgba(20, 26, 85, 0.8);
+}
