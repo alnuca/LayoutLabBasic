@@ -5,11 +5,12 @@ body {
   background-color: mintcream;
 }
 
-.container-1{
+.container{
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: $grid-gap;
+  padding-bottom: 20px;
 
   div{
     display: flex;
@@ -21,25 +22,61 @@ body {
 }
 
 .base-color{
-  background-color: $base-color;
   width: $items-size * 1.2;
 }
 
-$i: 1;
-@while $i <= 4 {
-  .darken-#{$i} {
-    background-color: color.scale($base-color, $lightness: -$i * 2 * 10%);
-    color: white;
-    width: $items-size;
+.c1{
+  .base-color{
+    background-color: $base-color1;
   }
-  $i: $i + 1;
+}
+
+.c2{
+  .base-color{
+    background-color: $base-color2;
+  }
+}
+.c3{
+  .base-color{
+    background-color: $base-color3;
+  }
 }
 
 $i: 1;
 @while $i <= 4 {
-  .lighten-#{$i} {
-    background-color: color.scale($base-color, $lightness: $i * 2 * 10%);
-    width: $items-size;
+  .c1{
+    .darken-#{$i} {
+      background-color: color.scale($base-color1, $lightness: -$i * 2 * 10%);
+      color: white;
+      width: $items-size;
+    }
+    .lighten-#{$i} {
+      background-color: color.scale($base-color1, $lightness: $i * 2 * 10%);
+      width: $items-size;
+    }
   }
+  .c2{
+    .darken-#{$i} {
+      background-color: color.scale($base-color2, $lightness: -$i * 2 * 10%);
+      color: white;
+      width: $items-size;
+    }
+    .lighten-#{$i} {
+      background-color: color.scale($base-color2, $lightness: $i * 2 * 10%);
+      width: $items-size;
+    }
+  }
+  .c3{
+    .darken-#{$i} {
+      background-color: color.scale($base-color3, $lightness: -$i * 2 * 10%);
+      color: white;
+      width: $items-size;
+    }
+    .lighten-#{$i} {
+      background-color: color.scale($base-color3, $lightness: $i * 2 * 10%);
+      width: $items-size;
+    }
+  }
+  
   $i: $i + 1;
 }
