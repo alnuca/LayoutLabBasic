@@ -3,3 +3,23 @@ $items-size:100px;
 $base-color1: red;
 $base-color2: blue;
 $base-color3: yellow;
+@use "sass:color";
+
+
+
+@mixin create-styles($i, $color) {
+  .base-color{
+      background-color: $color;
+      width: $items-size * 1.2;
+    }
+    .darken-#{$i} {
+        background-color: color.scale($color, $lightness: -$i * 2 * 10%);
+        color: white;
+        width: $items-size;
+    }
+
+    .lighten-#{$i} {
+        background-color: color.scale($color, $lightness: $i * 2 * 10%);
+        width: $items-size;
+    }
+}
